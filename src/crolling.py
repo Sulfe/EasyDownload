@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 import urllib.request
 
-def googleColling(optionPhoto):
+def googleCrolling(optionPhoto):
     searchName = optionPhoto[0]
     searchEngine = optionPhoto[1]
     searchDriver = optionPhoto[2]
@@ -22,7 +22,7 @@ def googleColling(optionPhoto):
     elem.send_keys(Keys.RETURN)
 
     
-    outpath = str(searchPath) + '/'   ##바꾸기 자신의 경로로##
+    outpath = str(searchPath)+'/'   ##바꾸기 자신의 경로로##
 
     SCROLL_PAUSE_TIME = 1
     # Get scroll height
@@ -54,7 +54,7 @@ def googleColling(optionPhoto):
             urllib.request.install_opener(opener)
             urllib.request.urlretrieve(imgUrl, outpath + outfile)
             count = count + 1
-            if count == (integer(searchNum)+1):
+            if count == (int(searchNum)+1):
                 break
             
         except:

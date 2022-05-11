@@ -18,7 +18,7 @@ def openFile():
     
 def downAct():
     optionPhoto = [searchEnt.get(),engine.get(),driverEnt.get(),rootEnt.get(),downNumCom.get()]
-    crolling.googleColling(optionPhoto)
+    crolling.googleCrolling(optionPhoto)
     #testLabel.configure(text=optionPhoto)
     
 def openPath():
@@ -71,11 +71,5 @@ downBtn.place(x=315,y=330) #다운로드 버튼 위치
 driverlabel.place(x=13,y=114) #드라이버 지정 라벨 위치
 driverBtn.place(x=395,y=125) #드라이버 지정 버튼 위치
 driverEnt.place(x=100,y=130) #드라이버 지정 엔트리 위치
-
-
-
-
-
-
 
 root.mainloop()
