@@ -21,6 +21,9 @@ def downAct():
     crolling.googleColling(optionPhoto)
     #testLabel.configure(text=optionPhoto)
     
+def openPath():
+    path = os.path.realpath(rootEnt.get())
+    os.startfile(path)
     
 root = Tk()
 root.title("Easy Download") #창 이름
@@ -47,7 +50,7 @@ driverlabel=Label(root,text='드라이버 지정',width=10,height=3) #드라이�
 driverBtn = Button(root,text='찾아보기',width=10,height=1,command=openFile) #드라이버 버튼
 driverEnt = Entry(root,width=40) #드라이버 엔트리
 
-openBtn = Button(root,text='경로 열기',width=20,height=1) #경로열기 버튼
+openBtn = Button(root,text='경로 열기',width=20,height=1,command=openPath) #경로열기 버튼
 downBtn = Button(root,text='다운로드',width=20,height=1,command=downAct) #다운로드 버튼
 
 #test출력 라벨 optionPhoto 확인용
