@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import filedialog
 import tkinter.ttk as ttk
 import os
+import crolling
 
 def openFolder():
     dir_path = filedialog.askdirectory(parent=root,initialdir="/",title='Please select a directory')
@@ -17,6 +18,8 @@ def openFile():
     
 def downAct():
     optionPhoto = [searchEnt.get(),engine.get(),driverEnt.get(),rootEnt.get(),downNumCom.get()]
+    crolling.googleColling(optionPhoto)
+    #testLabel.configure(text=optionPhoto)
     
     
 root = Tk()
@@ -46,6 +49,7 @@ driverEnt = Entry(root,width=40) #드라이버 엔트리
 
 openBtn = Button(root,text='경로 열기',width=20,height=1) #경로열기 버튼
 downBtn = Button(root,text='다운로드',width=20,height=1,command=downAct) #다운로드 버튼
+
 #test출력 라벨 optionPhoto 확인용
 #testLabel = Label(root,text=' ', width=80, height=1)
 #testLabel.place(x=20,y=280)
@@ -64,6 +68,11 @@ downBtn.place(x=315,y=330) #다운로드 버튼 위치
 driverlabel.place(x=13,y=114) #드라이버 지정 라벨 위치
 driverBtn.place(x=395,y=125) #드라이버 지정 버튼 위치
 driverEnt.place(x=100,y=130) #드라이버 지정 엔트리 위치
+
+
+
+
+
 
 
 root.mainloop()
