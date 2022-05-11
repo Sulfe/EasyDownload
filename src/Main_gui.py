@@ -15,10 +15,13 @@ def openFile():
     driverEnt.delete(0,None)
     driverEnt.insert(0,dir_file)
     
+def downAct():
+    optionPhoto = [searchEnt.get(),engine.get(),driverEnt.get(),rootEnt.get(),downNumCom.get()]
+    
     
 root = Tk()
 root.title("Easy Download") #창 이름
-root.geometry("540x380+100+100") #창 크기
+root.geometry("540x380+100+100") #창 크기 540
 root.resizable(0,0) #창 크기 조절 비활성
 
 searchEnt = Entry(root,width=53) #검색 엔트리
@@ -42,8 +45,10 @@ driverBtn = Button(root,text='찾아보기',width=10,height=1,command=openFile) 
 driverEnt = Entry(root,width=40) #드라이버 엔트리
 
 openBtn = Button(root,text='경로 열기',width=20,height=1) #경로열기 버튼
-downBtn = Button(root,text='다운로드',width=20,height=1) #다운로드 버튼
-
+downBtn = Button(root,text='다운로드',width=20,height=1,command=downAct) #다운로드 버튼
+#test출력 라벨 optionPhoto 확인용
+#testLabel = Label(root,text=' ', width=80, height=1)
+#testLabel.place(x=20,y=280)
 
 searchlabel.place(x=30,y=14) #검색 라벨 위치
 enginelabel.place(x=20,y=65) #엔진 선택 라벨 위치
@@ -59,9 +64,6 @@ downBtn.place(x=315,y=330) #다운로드 버튼 위치
 driverlabel.place(x=13,y=114) #드라이버 지정 라벨 위치
 driverBtn.place(x=395,y=125) #드라이버 지정 버튼 위치
 driverEnt.place(x=100,y=130) #드라이버 지정 엔트리 위치
-
-
-#optionPhoto = 
 
 
 root.mainloop()
