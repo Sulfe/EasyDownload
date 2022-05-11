@@ -3,17 +3,18 @@ from selenium.webdriver.common.keys import Keys
 import time
 import urllib.request
 
-driver = webdriver.Chrome(r"C:\Users\songh\OneDrive\문서\Project\Python\EasyDownload\src\chromedriver.exe")
+
 # Option to not show chrome/크롬을 띄우지 않는 옵션 설정
 options = webdriver.ChromeOptions()
 options.headless = True
+driver = webdriver.Chrome(r"C:\Users\songh\OneDrive\문서\Project\Python\EasyDownload\src\chromedriver.exe",options=options) ##바꾸기 자신의 경로로##
 driver.get("https://www.google.co.kr/imghp?hl=ko&tab=wi&authuser=0&ogbl")
 elem = driver.find_element_by_name("q")
 elem.send_keys("조코딩")
 elem.send_keys(Keys.RETURN)
 
 searchName = '검색어'
-outpath = 'C:/Users/songh/Downloads/'   
+outpath = 'C:/Users/songh/Downloads/'   ##바꾸기 자신의 경로로##
 
 SCROLL_PAUSE_TIME = 1
 # Get scroll height
