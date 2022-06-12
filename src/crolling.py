@@ -16,9 +16,8 @@ def action(searchName,searchEngine,searchDriver,searchPath,searchNum):
         value = googleCrolling(searchName,searchDriver,searchPath,searchNum)
         return value
     else :
-        value=naverCrolling(searchName,searchDriver,searchPath,searchNum)
+        value = naverCrolling(searchName,searchDriver,searchPath,searchNum)
         return value
-
 
 def googleCrolling(searchName,searchDriver,searchPath,searchNum):
     # Option to not show chrome/크롬을 띄우지 않는 옵션 설정
@@ -48,7 +47,6 @@ def googleCrolling(searchName,searchDriver,searchPath,searchNum):
             except:
                 break
         last_height = new_height
-
     images = driver.find_elements_by_css_selector(".rg_i.Q4LuWd")
     count = 1
     for image in images:
@@ -58,7 +56,7 @@ def googleCrolling(searchName,searchDriver,searchPath,searchNum):
             imgUrl = driver.find_element_by_xpath('/html/body/div[2]/c-wiz/div[3]/div[2]/div[3]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div[3]/div/a/img').get_attribute("src")
             opener=urllib.request.build_opener()
             opener.addheaders=[('User-Agent','Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1941.0 Safari/537.36')]
-            outfile = str(count) + ".jpg"
+            outfile =str(count)+'.jpg'
             urllib.request.install_opener(opener)
             urllib.request.urlretrieve(imgUrl, outpath + outfile)
             count = count + 1
@@ -73,7 +71,7 @@ def googleCrolling(searchName,searchDriver,searchPath,searchNum):
 
 
 
-def naverCrolling(searchName,searchDriver,searchPath,searchNum,num):
+def naverCrolling(searchName,searchDriver,searchPath,searchNum):
     print('다운로드를 시작합니다.')
     # Option to not show chrome/크롬을 띄우지 않는 옵션 설정
     options = webdriver.ChromeOptions()
